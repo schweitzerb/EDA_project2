@@ -16,7 +16,8 @@ totals <- aggregate(Emissions~year,data=NEIdata,FUN=sum)
 ### Build and Save plot
 png(filename = "plot1.png", width = 480, height = 480, units = "px", pointsize = 12)
 
-      plot(totals,axes=FALSE,ylab="Total Emissions (kilotons)")
+      plot(totals,axes=FALSE,ylab=expression("Total PM"[2.5]*" Emissions (kilotons)"),
+           main=expression("U.S. PM"[2.5]*" Emissions by Year"))
       axis(2,at=c(0,3500000,5250000,7000000,8750000), labels=c(0,"3500","5250","7000","8750"))
       axis(1,at = totals$year, labels=totals$year,lwd=0,lwd.ticks=1)
 
